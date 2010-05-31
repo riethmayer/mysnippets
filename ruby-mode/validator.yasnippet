@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: validator
+# key: validator
+# group: validations
+# --
+class ${1:EmailFormat}Validator < ActiveModel::EachValidator
+$>def validate_each(object, attribute, value)
+$>unless value =~ /${2:^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$}/i
+$>object.errors[attribute] << (options[:message] || "${3:is not formatted properly}") 
+$>end
+$>end
+end

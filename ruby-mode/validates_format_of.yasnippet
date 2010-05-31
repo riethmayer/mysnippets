@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: validates_format_of
+# key: vf
+# group: validations
+# --
+validates :${1:email}, :format => {:with => /^([^@\s]+)@((?:[-a-z-0-9]+\.)+[a-z]{2,})$/i}
