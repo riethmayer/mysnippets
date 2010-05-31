@@ -4,6 +4,8 @@ These are snippets for the yasnippet plugin used with emacs.
 
 # Installation
 
+In short: follow the installation from yasnippet, and add those four lines to your emacs config.
+
 ## Get yasnippet
 
 Tested with [yasnippet 0.6.1c](http://code.google.com/p/yasnippet/downloads/detail?name=yasnippet-0.6.1c.tar.bz2).
