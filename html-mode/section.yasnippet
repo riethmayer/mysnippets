@@ -3,20 +3,25 @@
 # key: section
 # expand-env: ((yas/indent-line 'auto) (yas/wrap-around-region 't))
 # --
-<section id="$1"> 
-<article class="$1">
-<header> 
-<h2>$2</h2> 
-<p>$3</p>
+<section class="$1"> 
+<article class="$2">
+
+<header>
+<h2>$3</h2> 
+<p>$4</p>
 </header>
-<aside> 
-<p>$4</p> 
-</aside> 
+
 <p>
 $5
 </p> 
+
+<aside> 
+<p>$6</p> 
+</aside> 
+
 <footer>
 <p>${6:&copy; 2010 Jan Riethmayer}</p> 
 </footer>
+
 </article> 
 </section>
