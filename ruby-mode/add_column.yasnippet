@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: add column
+# key: mcol
+# expand-env: ((yas/indent-line 'auto) (yas/wrap-around-region 't))
+# --
+add_column :${1:table_name}s, :${2:column_name}, :${3:string}
+remove_column :$1s, :$2

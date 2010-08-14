@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: event
+# key: event
+# expand-env: ((yas/indent-line 'auto) (yas/wrap-around-region 't))
+# --
+event :${1:Event} do
+  transitions :from => :${2:FromState}, :to => :${3:ToState}
+  $0
+end
