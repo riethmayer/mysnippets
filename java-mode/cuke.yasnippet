@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# name: cuke
+# key: cuke
+# expand-env: ((yas/indent-line 'auto) (yas/wrap-around-region 't))
+# --
+import cuke4duke.Given;
+import cuke4duke.When;
+import cuke4duke.Then;
+
+import cuke4duke.annotation.Pending;
+import cuke4duke.annotation.I18n.EN.*;
+
+public class ${1:Klass}Steps{
+  $0
+}

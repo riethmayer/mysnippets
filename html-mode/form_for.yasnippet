@@ -1,0 +1,18 @@
+# -*- mode: snippet -*-
+# name: form_for
+# key: form
+# expand-env: ((yas/indent-line 'auto) (yas/wrap-around-region 't))
+# --
+<% form_for @${1:model}, :url => $1_path do |f| %>
+<fieldset>
+  <legend><%= t("$1.form_title") %></legend>
+  <%= f.error_messages %>
+  <ol>
+    <li>
+      <%= collection_select(:$1, :method, ${2:Collection}, :id, :title) %>
+    </li>
+  </ol>
+  <button type="submit"><%= t("$1.submit") %></button>
+  <%= link_to t("$1.cancel"), ${3:cancel_url}_path %>
+</fieldset>
+<% end %>

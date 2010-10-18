@@ -1,10 +1,8 @@
 # -*- mode: snippet -*-
-# name: pending
-# key: pending
+# name: for
+# key: for
 # expand-env: ((yas/indent-line 'auto) (yas/wrap-around-region 't))
 # --
-test "$1" do
-  raise "pending"
-end
-
-pending$0
+jQuery(${1:[]}).each(function (i,e){
+  $0
+});

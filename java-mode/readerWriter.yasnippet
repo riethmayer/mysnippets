@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: readerWriter
+# key: rw
+# expand-env: ((yas/indent-line 'auto) (yas/wrap-around-region 't))
+# --
+${1:T} ${2:title};$0
+void set${2:$(upcase-initials text)}($1 $2){
+     this.$2 = $2;
+}
+$1 get${2:$(upcase-initials text)}(){
+     return this.$2;
+}

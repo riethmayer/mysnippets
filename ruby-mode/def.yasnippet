@@ -1,7 +1,8 @@
 # -*- mode: snippet -*-
 # name: def
 # key: def
-# group: basic
+# expand: ((yas/indent-line 'auto) (yas/wrap-around-region 't))
 # --
-def $0
+def ${1:foo}
+$>$0
 end

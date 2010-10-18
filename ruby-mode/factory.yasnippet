@@ -1,10 +1,8 @@
 # -*- mode: snippet -*-
-# name: pending
-# key: pending
+# name: factory
+# key: factory
 # expand-env: ((yas/indent-line 'auto) (yas/wrap-around-region 't))
 # --
-test "$1" do
-  raise "pending"
+Factory.define :${1:model} do |f|
+$>f.$0
 end
-
-pending$0

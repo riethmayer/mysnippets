@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: add_index
+# key: index
+# --
+add_index :${1:model}s, [${2:columns}] #, :unique => true
+remove_index :$1s, :column => [$2]

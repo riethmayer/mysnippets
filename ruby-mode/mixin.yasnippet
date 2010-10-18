@@ -1,0 +1,19 @@
+# -*- mode: snippet -*-
+# name: mixin
+# key: mixin
+# expand-env: ((yas/indent-line 'auto) (yas/wrap-around-region 't))
+# --
+module ${1:Namespace}
+
+  def self.included(base)
+    base.send(:include, $1::InstanceMethods)
+    base.send(:extend, ClassMethods)
+  end
+
+  module ClassMethods
+    $0
+  end
+
+  module InstanceMethods
+  end
+end

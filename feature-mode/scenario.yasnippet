@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: scenario
+# key: scenario
+# expand-env: ((yas/indent-line 'auto) (yas/wrap-around-region 't))
+# --
+Scenario: ${1:name your scenario}
+  Given ${2:the following setup}
+  When ${3:something happens}
+  Then ${4:there should be an effect}
