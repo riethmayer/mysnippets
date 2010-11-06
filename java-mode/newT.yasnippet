@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: newT
+# key: newT
+# expand-env: ((yas/indent-line 'auto) (yas/wrap-around-region 't))
+# --
+${1:$(upcase-initials text)}<${2:?}> ${1:t} = new ${1:$(upcase-initials text)}<$2>($3);

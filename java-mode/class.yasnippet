@@ -3,6 +3,10 @@
 # key: cla
 # expand-env: ((yas/indent-line 'auto) (yas/wrap-around-region 't))
 # --
-class ${1:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`}{
+public class ${1:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`}{
+
+    /** $1 constructor */
+    public $1(){}
+    
     $0
 }

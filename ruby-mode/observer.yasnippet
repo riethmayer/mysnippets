@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: observer
+# key: observer
+# expand-env: ((yas/indent-line 'auto) (yas/wrap-around-region 't))
+# --
+class ${1:`(split-string (file-name-nondirectory (file-name-sans-extension (buffer-file-name))) "_")`} < ActiveModel::Observer
+$0
+end

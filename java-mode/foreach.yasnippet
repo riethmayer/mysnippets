@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: foreach
+# key: for
+# expand-env: ((yas/indent-line 'auto) (yas/wrap-around-region 't))
+# --
+for(${1:$(upcase-initials text)} ${1:a} : $1s) {
+  $0
+}
