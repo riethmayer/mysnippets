@@ -1,7 +1,6 @@
 # -*- mode: snippet -*-
-# name: page_title
-# key: pt
+# name: sidebar
+# key: sidebar
 # expand-env: ((yas/indent-line 'auto) (yas/wrap-around-region 't))
 # --
-<% title t("$1") %>
-$0
+$sidebar-columns: floor($blueprint-grid-columns / ${1:4});$0

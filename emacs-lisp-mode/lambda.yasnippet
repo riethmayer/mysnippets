@@ -1,7 +1,7 @@
 # -*- mode: snippet -*-
-# name: page_title
-# key: pt
+# name: lambda
+# key: lambda
 # expand-env: ((yas/indent-line 'auto) (yas/wrap-around-region 't))
 # --
-<% title t("$1") %>
-$0
+(lambda (${1:lst})
+        $0)

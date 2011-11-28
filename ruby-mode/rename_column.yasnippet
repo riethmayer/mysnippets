@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: rename_column
+# key: rcol
+# expand-env: ((yas/indent-line 'auto) (yas/wrap-around-region 't))
+# --
+rename_column :${1:table_name}s, :${2:column_name}, :${3:new_column_name}
+rename_column :$1s, :$3, :$2

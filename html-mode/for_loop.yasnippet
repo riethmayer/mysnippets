@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: for_loop
+# key: fori
+# expand-env: ((yas/indent-line 'auto) (yas/wrap-around-region 't))
+# --
+<% for ${1:item} in @$1s %>
+  <div class="$1 <%= cyqle([odd,even]) %>">
+    <%= $1.${2:title} =>$0
+  </div>
+<% end %>

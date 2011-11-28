@@ -3,6 +3,6 @@
 # key: factory
 # expand-env: ((yas/indent-line 'auto) (yas/wrap-around-region 't))
 # --
-Factory.define :${1:model} do |f|
-$>f.$0
+factory :${1:model} do
+  $0
 end

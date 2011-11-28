@@ -1,0 +1,173 @@
+# -*- mode: snippet -*-
+# name: letter
+# key: letter
+# expand-env: ((yas/indent-line 'auto) (yas/wrap-around-region 't))
+# --
+%---------------------------------------------------------------------------
+% scrlttr2.tex v0.3. (c) by Juergen Fenn <juergen.fenn@gmx.de>
+% Template for a letter to be typeset with scrlttr2.cls from KOMA-Script.
+% Latest version of the LaTeX Project Public License is applicable. 
+% File may not be modified and redistributed under the same name 
+% without the author's prior consent.
+%---------------------------------------------------------------------------
+\documentclass%%
+%---------------------------------------------------------------------------
+  [fontsize=9pt,%%          Schriftgroesse
+%---------------------------------------------------------------------------
+% Satzspiegel
+   paper=a4,%%               Papierformat
+   enlargefirstpage=on,%%    Erste Seite anders
+   pagenumber=headright,%%   Seitenzahl oben mittig
+%---------------------------------------------------------------------------
+% Layout
+   headsepline=on,%%         Linie unter der Seitenzahl
+   parskip=half,%%           Abstand zwischen Absaetzen
+%---------------------------------------------------------------------------
+% Briefkopf und Anschrift
+   fromalign=right,%%        Plazierung des Briefkopfs
+   fromphone=on,%%           Telefonnummer im Absender
+   fromrule=off,%%           Linie im Absender (aftername, afteraddress)
+   fromfax=off,%%            Faxnummer
+   fromemail=on,%%          Emailadresse
+   fromurl=on,%%            Homepage
+   fromlogo=off,%%           Firmenlogo
+   addrfield=on,%%           Adressfeld fuer Fensterkuverts
+   backaddress=on,%%          ...und Absender im Fenster
+   subject=beforeopening,%%  Plazierung der Betreffzeile
+   locfield=narrow,%%        zusaetzliches Feld fuer Absender
+   foldmarks=on,%%           Faltmarken setzen
+   numericaldate=off,%%      Datum numerisch ausgeben
+   refline=narrow,%%         Geschaeftszeile im Satzspiegel
+   DIV=8,
+%    headlines=0,
+%    headheight=0cm,
+%---------------------------------------------------------------------------
+% Formatierung
+   draft=on%%                Entwurfsmodus
+]{scrlttr2}
+%---------------------------------------------------------------------------
+%\usepackage{german}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage[greek,english,ngerman]{babel}
+\usepackage{url}
+\usepackage[usenames,dvipsnames]{color}
+%---------------------------------------------------------------------------
+% Fonts
+\setkomafont{fromname}{\sffamily \LARGE}
+\setkomafont{fromaddress}{\sffamily}%% statt \small
+\setkomafont{pagenumber}{\sffamily}
+\setkomafont{subject}{\textlsansd}
+\setkomafont{backaddress}{\mdseries}
+\usepackage{lucidafonts}
+% \usepackage{mathptmx}%% Schrift Times
+%\usepackage{mathpazo}%% Schrift Palatino
+%\setkomafont{fromname}{\LARGE}
+%---------------------------------------------------------------------------
+% Logo
+\usepackage{wallpaper}
+\ThisURCornerWallPaper{1}{riethmayer_briefkopf.pdf}
+%\URCornerWallPaper{1}{briefkopf_logo.pdf}
+%---------------------------------------------------------------------------
+\begin{document}
+\definecolor{DarkGray}{rgb}{.4,.4,.4}
+
+\setkomafont{pageheadfoot}{% 
+ \fontfamily{lsans}\selectfont
+  \color{DarkGray}
+} 
+\setkomafont{pagenumber}{%
+  \fontfamily{lsans}\selectfont
+  \color{DarkGray}
+}
+
+%---------------------------------------------------------------------------
+% Briefstil und Position des Briefkopfs
+\LoadLetterOption{DIN} %% oder: DINmtext, SN, SNleft, KOMAold.
+\makeatletter
+\@setplength{firstheadvpos}{15mm}
+\@setplength{firstheadwidth}{\paperwidth}
+\ifdim \useplength{toaddrhpos}>\z@
+  \@addtoplength[-2]{firstheadwidth}{\useplength{toaddrhpos}}
+\else
+  \@addtoplength[2]{firstheadwidth}{\useplength{toaddrhpos}}
+\fi
+\setlength{\oddsidemargin}{\useplength{toaddrhpos}}%
+\setlength{\textwidth}{13cm}%
+\addtolength{\oddsidemargin}{-1in}%
+\AfterCalculatingTypearea{%
+  \setlength{\oddsidemargin}{\useplength{toaddrhpos}}%
+  \addtolength{\oddsidemargin}{-1in}%
+}%
+\@setplength{foldmarkhpos}{0mm}
+\makeatother
+%---------------------------------------------------------------------------
+% Absender
+\setkomavar{fromname}{\textlsansd{Jan Riethmayer}}
+\setkomavar{fromaddress}{ Mindener Stra\ss e 20\\10589 Berlin}
+\setkomavar{fromphone}{+49.(0)176.48 500 300}
+\renewcommand{\phonename}{Telefon}
+\setkomavar{fromemail}{jan@riethmayer.de}
+\setkomavar{backaddressseparator}{ $\cdot$ }
+%\setkomavar{signature}{Jan Riethmayer}
+\setkomavar{signature}{\includegraphics[height=2cm]{my_signature.pdf}}
+%\setkomavar{frombank}{}
+%\setkomavar{location}{\\[10ex]\raggedleft{\footnotesize{\usekomavar{fromaddress}\\
+%      Telefon: \usekomavar{fromphone}}}}%% Neben dem Adressfenster
+%---------------------------------------------------------------------------
+\firsthead{}
+%---------------------------------------------------------------------------
+%\firstfoot{Fußzeile}
+%---------------------------------------------------------------------------
+% Geschaeftszeilenfelder Benamun
+\renewcaptionname{ngerman}{\yourrefname}{\textcolor{Gray}{\texttt{Ihr Zeichen}}}
+\renewcaptionname{ngerman}{\yourmailname}{\textcolor{Gray}{\texttt{Ihr
+    Schreiben vom}}}
+\renewcaptionname{ngerman}{\invoicename}{\textcolor{Gray}{\texttt{Mein
+    Zeichen}}}
+\renewcaptionname{ngerman}{\datename}{\textcolor{Gray}{\texttt{Datum}}}
+%---------------------------------------------------------------------------
+% Geschaeftszeilenfelder Inhalte
+\setkomavar{place}{Berlin}
+%\setkomavar{placeseparator}{, den }
+\setkomavar{date}{\today}
+\setkomavar{yourmail}{1. 1. 2003}%% 'Ihr Schreiben...'
+\setkomavar{yourref} {abcdefg}%%    'Ihr Zeichen...'
+\setkomavar{myref}{}%%      Unser Zeichen
+\setkomavar{invoice}{123}%% Rechnungsnummer
+%\setkomavar{phoneseparator}{.}
+%---------------------------------------------------------------------------
+% Versendungsart
+%\setkomavar{specialmail}{Einschreiben mit Rückschein}
+%---------------------------------------------------------------------------
+% Anlage neu definieren
+\renewcommand{\enclname}{Anlage}
+\setkomavar{enclseparator}{: }
+%---------------------------------------------------------------------------
+% Seitenstil
+\pagestyle{headings}%% keine Header in der Kopfzeile
+%---------------------------------------------------------------------------
+\begin{letter}{Empfängername\\Empfängerstraße\\PLZ Ort}
+%---------------------------------------------------------------------------
+% Weitere Optionen
+\KOMAoptions{%%
+}
+%---------------------------------------------------------------------------
+\setkomavar{subject}{Betreff}
+%---------------------------------------------------------------------------
+\opening{Sehr geehrte Damen und Herren,}
+
+dies ist ein Brief.
+
+\closing{Mit freundlichen Grüßen,}
+
+
+%---------------------------------------------------------------------------
+%\ps{PS:}
+%\encl{}
+%\cc{}
+%---------------------------------------------------------------------------
+\end{letter}
+%---------------------------------------------------------------------------
+\end{document}
+%---------------------------------------------------------------------------

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: content
+# key: content
+# expand-env: ((yas/indent-line 'auto) (yas/wrap-around-region 't))
+# --
+$content-columns: ceil(${1:3} * $blueprint-grid-columns / ${2:4});
+@include column($content-columns, ${3:true});$0

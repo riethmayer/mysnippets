@@ -1,7 +1,9 @@
 # -*- mode: snippet -*-
-# name: page_title
-# key: pt
+# name: private_method
+# key: defp
 # expand-env: ((yas/indent-line 'auto) (yas/wrap-around-region 't))
 # --
-<% title t("$1") %>
-$0
+def ${1:foo}
+  $0
+end
+private :$1
